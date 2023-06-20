@@ -18,6 +18,16 @@ const config = {
     locales: ["en"],
     defaultLocale: "en",
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: "http",
+        hostname: "i.annihil.us",
+        port: "",
+        pathname: "/u/prod/marvel/**",
+      },
+    ],
+  },
 };
 
 export default config;

@@ -1,46 +1,46 @@
 import { z } from "zod";
 
-export const CharactersListSchema = z.array(
-  z.object({
-    id: z.string(),
-    name: z.string(),
-    description: z.string(),
-    modified: z.string(),
-    resourceURI: z.string(),
-    urls: z.array(z.object({ type: z.string(), url: z.string() })),
-    thumbnail: z.object({ path: z.string(), extension: z.string() }),
-    comics: z.object({
-      available: z.string(),
-      returned: z.string(),
-      collectionURI: z.string(),
-      items: z.array(z.object({ resourceURI: z.string(), name: z.string() })),
-    }),
-    stories: z.object({
-      available: z.string(),
-      returned: z.string(),
-      collectionURI: z.string(),
-      items: z.array(
-        z.object({
-          resourceURI: z.string(),
-          name: z.string(),
-          type: z.string(),
-        })
-      ),
-    }),
-    events: z.object({
-      available: z.string(),
-      returned: z.string(),
-      collectionURI: z.string(),
-      items: z.array(z.object({ resourceURI: z.string(), name: z.string() })),
-    }),
-    series: z.object({
-      available: z.string(),
-      returned: z.string(),
-      collectionURI: z.string(),
-      items: z.array(z.object({ resourceURI: z.string(), name: z.string() })),
-    }),
-  })
-);
+const CharacterSchema = z.object({
+  id: z.string(),
+  name: z.string(),
+  description: z.string(),
+  modified: z.string(),
+  resourceURI: z.string(),
+  urls: z.array(z.object({ type: z.string(), url: z.string() })),
+  thumbnail: z.object({ path: z.string(), extension: z.string() }),
+  comics: z.object({
+    available: z.string(),
+    returned: z.string(),
+    collectionURI: z.string(),
+    items: z.array(z.object({ resourceURI: z.string(), name: z.string() })),
+  }),
+  stories: z.object({
+    available: z.string(),
+    returned: z.string(),
+    collectionURI: z.string(),
+    items: z.array(
+      z.object({
+        resourceURI: z.string(),
+        name: z.string(),
+        type: z.string(),
+      })
+    ),
+  }),
+  events: z.object({
+    available: z.string(),
+    returned: z.string(),
+    collectionURI: z.string(),
+    items: z.array(z.object({ resourceURI: z.string(), name: z.string() })),
+  }),
+  series: z.object({
+    available: z.string(),
+    returned: z.string(),
+    collectionURI: z.string(),
+    items: z.array(z.object({ resourceURI: z.string(), name: z.string() })),
+  }),
+});
+
+export const CharactersListSchema = z.array(CharacterSchema);
 
 export const MarvelSchema = z.object({
   code: z.string(),
@@ -57,6 +57,8 @@ export const MarvelSchema = z.object({
   }),
   etag: z.string(),
 });
+
+export type CharacterSchemaType = z.infer<typeof CharacterSchema>;
 
 export type CharactersListSchemaType = z.infer<typeof CharactersListSchema>;
 
