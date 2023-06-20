@@ -12,3 +12,16 @@ export const returnDefaultParams = () => {
     ts,
   };
 };
+
+export const returnNextAndPreviousCursor = (current: number) => {
+  let previous = 0;
+  if (current === 0) {
+    previous = 0;
+  } else if (current > 1) {
+    previous = current - 1;
+  }
+  return {
+    previous,
+    next: current++,
+  };
+};

@@ -1,4 +1,4 @@
-import axios, { AxiosError, AxiosResponse } from "axios";
+import axios, { AxiosResponse } from "axios";
 import { returnDefaultParams } from "./service-utils";
 import { MarvelSchemaType } from "y/schemas/character";
 

@@ -3,7 +3,12 @@ import GridCards from "y/components/grid/grid";
 import { api } from "y/utils/api";
 
 export default function Home() {
-  const { data } = api.marvelRouter.getCharacters.useQuery();
+  const { data } = api.marvelRouter.getCharacters.useQuery({
+    cursor: 0,
+    limit: 20,
+  });
+
+  console.log("data", data);
   return (
     <>
       <Head>

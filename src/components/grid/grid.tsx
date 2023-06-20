@@ -3,7 +3,7 @@ import { CharactersListSchemaType } from "y/schemas/character";
 import { GridWrapper, SimpleCardWrapper } from "./grid.styled";
 
 type TGridProps = {
-  data: CharactersListSchemaType;
+  data: CharactersListSchemaType | undefined;
 };
 export default function GridCards({ data }: TGridProps) {
   return (
