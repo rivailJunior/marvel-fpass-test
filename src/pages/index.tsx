@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { GridCards } from "y/components";
+import { GridCards, Pagination } from "y/components";
 
 import { api } from "y/utils/api";
 
@@ -18,6 +18,9 @@ export default function Home() {
       </Head>
       <main className="flex min-h-screen flex-col items-center justify-center bg-gray-50">
         <GridCards data={data?.characters} />
+        <div className="p-10">
+          <Pagination />
+        </div>
       </main>
     </>
   );
