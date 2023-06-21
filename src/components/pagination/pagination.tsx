@@ -2,6 +2,7 @@ import React from "react";
 import { PaginationItemsWrapper, PaginationWrapper } from "./pagination.styled";
 import { generatePaginationArray } from "y/helpers/pagination-helper";
 import Link from "next/link";
+import { PagesRoutes } from "y/helpers/pages-routes";
 
 type TPaginationProps = {
   offset: number;
@@ -24,7 +25,7 @@ export function Pagination({
     <nav aria-label="Pagination Buttons">
       <PaginationWrapper>
         {offset > 0 && (
-          <Link href={`/${encodeURIComponent(0)}`}>
+          <Link href={`${PagesRoutes.characters}/${encodeURIComponent(0)}`}>
             <PaginationItemsWrapper isMin={true} isMax={false} isActive={false}>
               First
             </PaginationItemsWrapper>
@@ -32,7 +33,9 @@ export function Pagination({
         )}
         {pagination.map((item) => {
           return (
-            <Link href={`/${encodeURIComponent(item - 1)}`}>
+            <Link
+              href={`${PagesRoutes.characters}/${encodeURIComponent(item - 1)}`}
+            >
               <PaginationItemsWrapper
                 key={item}
                 isMin={offset === 0 ? item === offset + 1 : false}
