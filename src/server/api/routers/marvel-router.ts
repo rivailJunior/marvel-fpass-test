@@ -20,10 +20,14 @@ export const marvelRouter = createTRPCRouter({
       });
 
       const cursorAux = returnNextAndPreviousCursor(cursor ?? 1);
+      const total = parseInt(data?.data?.total) || 0;
+      const totalPages = total ? Math.ceil(total / limit) : 0;
+
       return {
         characters: data?.data.results,
         nextCursor: cursorAux.next,
         previousCursor: cursorAux.previous,
+        totalPages: totalPages,
       };
     }),
 });

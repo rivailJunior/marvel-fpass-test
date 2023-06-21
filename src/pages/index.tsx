@@ -19,7 +19,11 @@ export default function Home() {
       <main className="flex min-h-screen flex-col items-center justify-center bg-gray-50">
         <GridCards data={data?.characters} />
         <div className="p-10">
-          <Pagination />
+          <Pagination
+            offset={1}
+            paginationItems={5}
+            totalPages={data?.totalPages}
+          />
         </div>
       </main>
     </>
