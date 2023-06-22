@@ -11,20 +11,23 @@ type TCardProps = {
 
 export function Card({ data }: TCardProps) {
   return (
-    <Link
-      href={`${PagesRoutes.character}/${data.id}`}
-      className="cursor-pointer"
-    >
-      <CardWrapper>
-        <Image
-          className="h-4/5 w-full rounded-t-lg border-b-2 border-b-gray-100"
-          src={`${data.thumbnail.path}.${data.thumbnail.extension}`}
-          alt={data.name}
-          width={700}
-          height={200}
-        />
-        <TextDivWrapper>{data.name}</TextDivWrapper>
-      </CardWrapper>
-    </Link>
+    data?.id && (
+      <Link
+        data-testid={data.name}
+        href={`${PagesRoutes.character}/${data.id}`}
+        className="cursor-pointer"
+      >
+        <CardWrapper>
+          <Image
+            className="h-4/5 w-full rounded-t-lg border-b-2 border-b-gray-100"
+            src={`${data.thumbnail.path}.${data.thumbnail.extension}`}
+            alt={data.name}
+            width={700}
+            height={200}
+          />
+          <TextDivWrapper>{data.name}</TextDivWrapper>
+        </CardWrapper>
+      </Link>
+    )
   );
 }
