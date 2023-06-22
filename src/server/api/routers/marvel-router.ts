@@ -16,7 +16,7 @@ export const marvelRouter = createTRPCRouter({
 
       const { data } = await getRequest("/characters", {
         limit,
-        offset: cursor,
+        offset: (cursor ?? 0) * limit,
       });
 
       const cursorAux = returnNextAndPreviousCursor(cursor ?? 1);

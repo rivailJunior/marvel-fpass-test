@@ -6,12 +6,11 @@ export default function Home() {
   const router = useRouter();
   const cursor =
     typeof router?.query?.index === "string" ? parseInt(router.query.index) : 0;
-
+  console.log("cursor page", cursor);
   const { data } = api.marvelRouter.getCharacters.useQuery({
-    cursor,
     limit: 20,
+    cursor,
   });
-
   return (
     <div className="flex min-h-screen flex-col items-center justify-center ">
       <GridCards data={data?.characters} />
