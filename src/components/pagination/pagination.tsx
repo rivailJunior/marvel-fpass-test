@@ -34,6 +34,7 @@ export function Pagination({
         {pagination.map((item) => {
           return (
             <Link
+              key={item}
               href={`${PagesRoutes.characters}/${encodeURIComponent(item - 1)}`}
             >
               <PaginationItemsWrapper

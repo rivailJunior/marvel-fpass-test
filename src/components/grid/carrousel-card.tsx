@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React, { useEffect } from "react";
-import { CharactersListSchemaType } from "y/schemas/character";
+import type { CharactersListSchemaType } from "y/schemas/character";
 import "./carousel-helper";
 import { carouselHelper } from "./carousel-helper";
 import { Carousel } from "flowbite";
@@ -13,15 +13,15 @@ export function CarouselCards({ data }: TCarouselProps) {
   useEffect(() => {
     if (data?.length) {
       const { items, options } = carouselHelper();
-      const carousel = new Carousel(items as any, options as any);
-      const $prevButton: any = document.getElementById("data-carousel-prev");
-      const $nextButton: any = document.getElementById("data-carousel-next");
+      const carousel = new Carousel(items, options);
+      const $prevButton = document.getElementById("data-carousel-prev");
+      const $nextButton = document.getElementById("data-carousel-next");
 
-      $prevButton.addEventListener("click", () => {
+      $prevButton?.addEventListener("click", () => {
         carousel.prev();
       });
 
-      $nextButton.addEventListener("click", () => {
+      $nextButton?.addEventListener("click", () => {
         carousel.next();
       });
     }
@@ -51,6 +51,7 @@ export function CarouselCards({ data }: TCarouselProps) {
         {data?.slice(0, 4).map((item, index) => {
           return (
             <button
+              key={index}
               id={`carousel-indicator-${index + 1}`}
               type="button"
               className="h-3 w-3 rounded-full"

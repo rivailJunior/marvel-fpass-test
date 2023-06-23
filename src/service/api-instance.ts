@@ -1,6 +1,6 @@
-import axios, { AxiosResponse } from "axios";
+import axios, { type AxiosResponse } from "axios";
 import { returnDefaultParams } from "./service-utils";
-import { MarvelSchemaType } from "y/schemas/character";
+import type { MarvelSchemaType } from "y/schemas/character";
 
 const httpInstance = axios.create({
   baseURL: "https://gateway.marvel.com/v1/public",

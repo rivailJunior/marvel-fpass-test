@@ -1,5 +1,6 @@
+import Image from "next/image";
 import React from "react";
-import { CharactersListSchemaType } from "y/schemas/character";
+import type { CharactersListSchemaType } from "y/schemas/character";
 
 interface HorizontalScrollProps {
   cards: CharactersListSchemaType | undefined;
@@ -16,7 +17,9 @@ export const HorizontalScrollCards: React.FC<HorizontalScrollProps> = ({
             key={card.id}
             className="w-64 flex-none rounded-lg bg-gray-100 shadow-md"
           >
-            <img
+            <Image
+              width={300}
+              height={300}
               src={`${card.thumbnail.path}.${card.thumbnail.extension}`}
               alt={card.name}
               className="h-40 w-full rounded-t-lg object-cover"

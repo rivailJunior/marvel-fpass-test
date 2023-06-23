@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { CarouselCards } from "y/components";
 import { api } from "y/utils/api";
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { CharacterSchemaType } from "y/schemas/character";
+import type { CharacterSchemaType } from "y/schemas/character";
 import { CardWrapper, TextDivWrapper } from "./card.styled";
 import Image from "next/image";
 import Link from "next/link";

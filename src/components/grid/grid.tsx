@@ -1,5 +1,5 @@
 import React from "react";
-import { CharactersListSchemaType } from "y/schemas/character";
+import type { CharactersListSchemaType } from "y/schemas/character";
 import { GridWrapper } from "./grid.styled";
 import { Card } from "../cards/card";
 

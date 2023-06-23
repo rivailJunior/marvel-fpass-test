@@ -1,24 +1,26 @@
+import type { CarouselItem, CarouselOptions } from "flowbite";
+
 export const carouselHelper = () => {
-  const items = [
+  const items: CarouselItem[] = [
     {
       position: 0,
-      el: document.getElementById("carousel-item-1"),
+      el: document.getElementById("carousel-item-1") as HTMLElement,
     },
     {
       position: 1,
-      el: document.getElementById("carousel-item-2"),
+      el: document.getElementById("carousel-item-2") as HTMLElement,
     },
     {
       position: 2,
-      el: document.getElementById("carousel-item-3"),
+      el: document.getElementById("carousel-item-3") as HTMLElement,
     },
     {
       position: 3,
-      el: document.getElementById("carousel-item-4"),
+      el: document.getElementById("carousel-item-4") as HTMLElement,
     },
   ];
 
-  const options = {
+  const options: CarouselOptions = {
     defaultPosition: 1,
     interval: 3000,
 
@@ -29,19 +31,19 @@ export const carouselHelper = () => {
       items: [
         {
           position: 0,
-          el: document.getElementById("carousel-indicator-1"),
+          el: document.getElementById("carousel-indicator-1") as HTMLElement,
         },
         {
           position: 1,
-          el: document.getElementById("carousel-indicator-2"),
+          el: document.getElementById("carousel-indicator-2") as HTMLElement,
         },
         {
           position: 2,
-          el: document.getElementById("carousel-indicator-3"),
+          el: document.getElementById("carousel-indicator-3") as HTMLElement,
         },
         {
           position: 3,
-          el: document.getElementById("carousel-indicator-4"),
+          el: document.getElementById("carousel-indicator-4") as HTMLElement,
         },
       ],
     },
