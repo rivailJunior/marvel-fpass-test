@@ -3,18 +3,22 @@ import { createTRPCRouter, publicProcedure } from "y/server/api/trpc";
 import { getRequest } from "y/service/api-instance";
 import { returnNextAndPreviousCursor } from "y/service/service-utils";
 
+const path = "/characters";
+
 export const marvelRouter = createTRPCRouter({
   getCharacters: publicProcedure
     .input(
       z.object({
+        name: z.string().nullish(),
         limit: z.number().min(1).max(20),
         cursor: z.number().nullish(),
       })
     )
     .query(async ({ input }) => {
-      const { limit, cursor } = input;
+      const { limit, cursor, name } = input;
 
-      const { data } = await getRequest("/characters", {
+      const { data } = await getRequest(path, {
+        name,
         limit,
         offset: (cursor ?? 0) * limit,
       });
@@ -28,6 +32,19 @@ export const marvelRouter = createTRPCRouter({
         nextCursor: cursorAux.next,
         previousCursor: cursorAux.previous,
         totalPages: totalPages,
+      };
+    }),
+  getCharacterById: publicProcedure
+    .input(
+      z.object({
+        id: z.string(),
+      })
+    )
+    .query(async ({ input }) => {
+      const { id } = input;
+      const { data } = await getRequest(`${path}/${parseInt(id)}`, {});
+      return {
+        character: data?.data.results[0],
       };
     }),
 });
