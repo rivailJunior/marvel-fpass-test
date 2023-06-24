@@ -17,14 +17,18 @@ type TCardDescriptionProps = {
 const TextComponent = ({
   title,
   value,
+  testId,
 }: {
   title?: string;
   value?: string;
+  testId?: string;
 }) => {
   return (
     <>
       {title && <TextTitleWrapper>{title}</TextTitleWrapper>}
-      {value && <TextValueWrapper>{value}</TextValueWrapper>}
+      {value && (
+        <TextValueWrapper data-testid={testId}>{value}</TextValueWrapper>
+      )}
     </>
   );
 };
@@ -48,24 +52,42 @@ export function CardDescription({ data }: TCardDescriptionProps) {
               />
             </ImageContainerWrapper>
           )}
-          <TextComponent title="name" value={data?.name || ""} />
+          <TextComponent title="Character Name" value={data?.name || ""} />
         </div>
         <div>
           <TextComponent title="Comics" />
           {data?.comics.items.map((item) => {
-            return <TextComponent key={item.name} value={item.name} />;
+            return (
+              <TextComponent
+                testId="comics"
+                key={item.name}
+                value={item.name}
+              />
+            );
           })}
         </div>
         <div>
           <TextComponent title="Séries" />
           {data?.series.items.map((item) => {
-            return <TextComponent key={item.name} value={item.name} />;
+            return (
+              <TextComponent
+                testId="series"
+                key={item.name}
+                value={item.name}
+              />
+            );
           })}
         </div>
         <div>
           <TextComponent title="Stories" />
           {data?.stories.items.map((item) => {
-            return <TextComponent key={item.name} value={item.name} />;
+            return (
+              <TextComponent
+                testId="stories"
+                key={item.name}
+                value={item.name}
+              />
+            );
           })}
         </div>
       </BodyContainerWrapper>
