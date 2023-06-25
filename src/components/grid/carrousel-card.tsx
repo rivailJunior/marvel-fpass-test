@@ -28,7 +28,7 @@ export function CarouselCards({ data }: TCarouselProps) {
   }, [data]);
   return (
     <div className="relative w-full">
-      <div className="relative h-96 overflow-hidden rounded-lg sm:h-64 xl:h-144">
+      <div className="relative h-96 overflow-hidden rounded-lg sm:h-144 xl:h-144">
         {data?.slice(0, 4).map((character, index) => {
           return (
             <div
@@ -38,10 +38,11 @@ export function CarouselCards({ data }: TCarouselProps) {
             >
               <Image
                 alt={character.name}
+                quality={100}
                 width={500}
                 height={500}
                 src={`${character.thumbnail.path}.${character.thumbnail.extension}`}
-                className="absolute left-1/2 top-1/2 block w-full -translate-x-1/2 -translate-y-1/2"
+                className="absolute left-1/2 top-1/2 block  w-full -translate-x-1/2 -translate-y-1/2"
               />
             </div>
           );

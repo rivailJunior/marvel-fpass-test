@@ -9,10 +9,14 @@ export default function Home() {
   });
   return (
     <HomePageBanner>
-      <Link href={"/characters/0"} className="mb-7 font-thin text-blue-600">
-        See More
-      </Link>
-      <CarouselCards data={data?.characters} />
+      <div className="flex flex-col">
+        <Link href={"/characters/0"}>
+          <div className="float-right mb-2 cursor-pointer font-normal text-blue-600">
+            See More
+          </div>
+        </Link>
+        <CarouselCards data={data?.characters} />
+      </div>
     </HomePageBanner>
   );
 }

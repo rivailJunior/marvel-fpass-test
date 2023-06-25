@@ -10,7 +10,7 @@ import {
 export function HomePageBanner({ children }: { children: React.ReactNode }) {
   return (
     <HomePageContainerWrapper>
-      <div className="container">
+      <div>
         <TitleWrapper>
           Would you like to know about your fav <Mark>Characters</Mark> ?
         </TitleWrapper>
