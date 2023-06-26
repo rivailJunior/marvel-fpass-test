@@ -4,14 +4,14 @@ import { PagesRoutes } from "y/helpers/pages-routes";
 
 export function Footer() {
   return (
-    <footer className="mt-24 w-full shadow dark:bg-gray-900">
+    <footer className="mt-24 w-full bg-gray-800">
       <div className="mx-auto w-full max-w-screen-xl p-4 md:py-8">
         <div className="sm:flex sm:items-center sm:justify-between">
           <Link
             href={PagesRoutes.personalSite}
             className="mb-4 flex items-center sm:mb-0"
           >
-            <span className="self-center whitespace-nowrap text-2xl font-semibold dark:text-white">
+            <span className="self-center whitespace-nowrap text-2xl font-semibold text-white">
               Fpass
             </span>
           </Link>
