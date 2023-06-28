@@ -1,7 +1,7 @@
 import tw from "tailwind-styled-components";
 
 export const CardWrapper = tw.div`
-	h-60 w-60 rounded-lg border border-gray-200 bg-red-300 shadow dark:bg-white
+	h-60 w-60 rounded-lg border border-gray-200 bg-white shadow dark:bg-white
 `;
 
 export const TextDivWrapper = tw.div`

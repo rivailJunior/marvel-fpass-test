@@ -19,6 +19,14 @@ export const Header: React.FC = () => {
                 Home
               </Link>
             </li>
+            <li>
+              <Link
+                href={`${PagesRoutes.characters}/0`}
+                className="text-white hover:text-gray-300"
+              >
+                Characters
+              </Link>
+            </li>
           </ul>
         </nav>
       </div>

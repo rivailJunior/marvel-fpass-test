@@ -1,3 +1,4 @@
+export { HomeInformativeCard } from "./cards/home-informative-card";
 export { Footer } from "./footer/footer";
 export { HomePageBanner } from "./cards/home-page";
 export { CardDescription } from "./cards/card-description";

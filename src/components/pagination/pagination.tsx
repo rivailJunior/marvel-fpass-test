@@ -21,6 +21,7 @@ export function Pagination({
     totalPages || 0,
     paginationItems
   );
+
   return (
     <nav aria-label="Pagination Buttons">
       <PaginationWrapper>
@@ -50,9 +51,15 @@ export function Pagination({
             </Link>
           );
         })}
-        {/* <PaginationItemsWrapper isMin={false} isMax={true} isActive={false}>
-          Last
-        </PaginationItemsWrapper> */}
+        <Link
+          href={`${PagesRoutes.characters}/${encodeURIComponent(
+            !!totalPages && totalPages - 1
+          )}`}
+        >
+          <PaginationItemsWrapper isMin={false} isMax={true} isActive={false}>
+            Last
+          </PaginationItemsWrapper>
+        </Link>
       </PaginationWrapper>
     </nav>
   );
