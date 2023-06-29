@@ -51,7 +51,7 @@ export const marvelRouter = createTRPCRouter({
     .input(z.object({ name: z.string() }))
     .query(async ({ input }) => {
       const { name } = input;
-      if (name.length >= 2) {
+      if (name?.length >= 2) {
         const { data } = await getRequest(`${path}`, { nameStartsWith: name });
         return {
           characters: data?.data.results,

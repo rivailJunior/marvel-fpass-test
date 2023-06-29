@@ -13,14 +13,14 @@ const MyApp: AppType = ({ Component, pageProps }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <div className="w-full bg-gray-50">
+      <div className="min-h-screen w-full bg-gray-50">
         <div className="flex justify-center p-5">
           <div className="max-w-6xl ">
             <Component {...pageProps} />
           </div>
         </div>
-        <Footer />
       </div>
+      <Footer />
     </>
   );
 };

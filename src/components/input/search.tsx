@@ -3,11 +3,22 @@ import { SearchInput } from "./search-field";
 import { api } from "y/utils/api";
 import { HorizontalCard } from "../cards/horizontal-card";
 
-export function Search() {
+type TSearch = {
+  onShowResult: (isShowing: boolean) => void;
+};
+
+export function Search({ onShowResult }: TSearch) {
   const [name, setName] = useState<string>("");
   const { data } = api.marvelRouter.getCharacterByName.useQuery({
     name: name,
   });
+
+  if (data?.characters.length) {
+    onShowResult(true);
+  } else {
+    onShowResult(false);
+  }
+
   return (
     <div className="flex w-full flex-col">
       <SearchInput

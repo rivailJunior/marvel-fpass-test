@@ -12,7 +12,6 @@ export default function Character(
 ) {
   const { id } = props;
   const { data } = api.marvelRouter.getCharacterById.useQuery({ id });
-
   return <CardDescription data={data?.character} />;
 }
 
@@ -31,14 +30,14 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
   return {
     paths,
-    fallback: false,
+    fallback: "blocking",
   };
 };
 export const getStaticProps = async (
   context: GetStaticPropsContext<{ id: string }>
 ) => {
   const id = context.params?.id as string;
-
+  console.log("id ===>", id);
   await serverSideHelpers.marvelRouter.getCharacterById.prefetch({
     id,
   });
@@ -47,5 +46,6 @@ export const getStaticProps = async (
       trpcState: serverSideHelpers.dehydrate(),
       id,
     },
+    revalidate: 10,
   };
 };
