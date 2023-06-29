@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { PagesRoutes } from "y/helpers/pages-routes";
-import { CharacterSchemaType } from "y/schemas/character";
+import type { CharacterSchemaType } from "y/schemas/character";
 /**
  * should be used with search input
  * @returns

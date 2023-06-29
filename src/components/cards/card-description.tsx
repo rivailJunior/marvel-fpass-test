@@ -7,7 +7,7 @@ import {
   TextTitleWrapper,
   TextValueWrapper,
 } from "../../components/cards/charater.styled";
-import { CharacterSchemaType } from "y/schemas/character";
+import type { CharacterSchemaType } from "y/schemas/character";
 import Image from "next/image";
 
 type TCardDescriptionProps = {

@@ -1,7 +1,7 @@
-import {
+import type {
   GetStaticPaths,
   GetStaticPropsContext,
-  type InferGetStaticPropsType,
+  InferGetStaticPropsType,
 } from "next";
 import { serverSideHelpers } from "../api/trpc/[trpc]";
 import { api } from "y/utils/api";
