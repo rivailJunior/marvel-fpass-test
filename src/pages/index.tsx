@@ -3,6 +3,7 @@ import {
   CarouselCards,
   HomePageBanner,
   HomeInformativeCard,
+  Search,
 } from "y/components";
 import { api } from "y/utils/api";
 
@@ -14,6 +15,9 @@ export default function Home() {
   return (
     <HomePageBanner>
       <div className="flex flex-col">
+        <div className="mb-2">
+          <Search />
+        </div>
         <Link href={"/characters/0"}>
           <div className="float-right mb-0 cursor-pointer font-normal text-blue-600">
             see Marvel List

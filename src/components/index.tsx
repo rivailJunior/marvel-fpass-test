@@ -1,3 +1,5 @@
+export { Search } from "./input/search";
+export { SearchInput } from "./input/search-field";
 export { HomeInformativeCard } from "./cards/home-informative-card";
 export { Footer } from "./footer/footer";
 export { HomePageBanner } from "./cards/home-page";
