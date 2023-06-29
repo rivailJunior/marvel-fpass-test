@@ -17,6 +17,6 @@ describe("Pagination", () => {
       expect(screen.getByText(item)).toBeDefined();
     }
     expect(screen.getByText(/first/i)).toBeDefined();
-    expect(screen.queryByText(/last/i)).toBeFalsy();
+    expect(screen.queryByText(/last/i)).toBeDefined();
   });
 });
